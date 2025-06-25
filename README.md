@@ -32,8 +32,8 @@ This is a simple Flask-based marketplace web application where users can registe
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/flask-marketplace.git
-   cd flask-marketplace
+   git clone https://github.com/lalitaditya04/FlaskProj.git
+   cd FlaskProj
    ```
 
 2. **Set up a virtual environment:**
