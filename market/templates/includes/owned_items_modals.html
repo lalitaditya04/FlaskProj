@@ -1,0 +1,37 @@
+<!-- Sell Item Modal -->
+<div class="modal fade" id="Modal-SellingConfirm-{{ owned_item.id }}" tabindex="-1" aria-labelledby="SellItemLabel{{ owned_item.id }}" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white border border-danger rounded-lg shadow-lg">
+
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="SellItemLabel{{ owned_item.id }}">
+          Confirm Selling: <span class="text-warning">{{ owned_item.name }}</span>
+        </h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form method="POST">
+          {{ selling_form.hidden_tag() }}
+          <p class="lead text-center">
+            Are you sure you want to <strong>sell</strong> <span class="text-info">{{ owned_item.name }}</span>
+            for <strong class="text-success">&#8377;{{ owned_item.price }}</strong>?
+          </p>
+          <p class="text-center small text-muted">
+            This action will return the item to the market and refund the price to your wallet.
+          </p>
+          <input type="hidden" id="sold_item" name="sold_item" value="{{ owned_item.name }}">
+
+          <div class="d-grid gap-2">
+            {{ selling_form.submit(class="btn btn-outline-danger btn-block") }}
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-0 d-flex justify-content-center">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

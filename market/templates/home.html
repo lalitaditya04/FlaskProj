@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <div class="jumbotron bg-dark text-white py-5 rounded shadow">
+        <h1 class="display-4">Welcome to Flask Market!</h1>
+        <p class="lead">Buy and sell items securely with ease. Create an account to get started with your marketplace journey.</p>
+        <hr class="my-4 bg-light">
+        <p>
+            {% if current_user.is_authenticated %}
+                Welcome back, <strong>{{ current_user.username }}</strong>! Visit your profile or explore the market.
+            {% else %}
+                If you're new here, register for an account. Already have one? Login and explore the market!
+            {% endif %}
+        </p>
+        <div class="mt-4 d-flex justify-content-center gap-3">
+            {% if not current_user.is_authenticated %}
+                <a href="{{ url_for('register_page') }}" class="btn btn-primary btn-lg mr-2">Get Started</a>
+                <a href="{{ url_for('login_page') }}" class="btn btn-outline-light btn-lg">Login</a>
+            {% else %}
+                <a href="{{ url_for('market_page') }}" class="btn btn-primary btn-lg mr-2">Explore Market</a>
+                <a href="#" class="btn btn-outline-light btn-lg">Profile</a>  <!-- Link this to your profile page route -->
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
