@@ -97,22 +97,3 @@ FlaskProj/
 Feel free to reach out or fork the project and build on it!
 
 ---
-
-## 📜 License
-
-This project is open-source and available under the MIT License.
-
----
-
-### 📌 Notes
-
-- Replace `https://github.com/yourusername/flask-marketplace.git` with your actual GitHub repo link.
-- Add a `requirements.txt` with the necessary packages (`Flask`, `Flask-WTF`, `Flask-Login`, `Flask-Bcrypt`, `SQLAlchemy`, etc.).
-- If you haven't added a `run.py`, you can create one like this:
-
-```python
-from market import app
-
-if __name__ == '__main__':
-    app.run(debug=True)
-```
